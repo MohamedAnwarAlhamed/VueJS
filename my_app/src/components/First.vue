@@ -1,5 +1,6 @@
 <template>
     <div class="first">
+        <h1>{{ msgp }}</h1>
         <h1>{{ msgf }}</h1> 
         <Third />
     </div>
@@ -16,6 +17,9 @@ export default {
     },
     components: {
         Third,
+    },
+    props: {
+        msgp: String,
     },
 };
 </script>

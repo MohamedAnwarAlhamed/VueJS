@@ -6,6 +6,8 @@
         <h1>{{ person.name }}</h1>
         <h1>{{ available }}</h1>
         <h1>{{ msgf }}</h1> 
+        <h1>{{ changeMsg() }}</h1>
+        <h1>{{ changeNumber() }}</h1>
         <Third />
     </div>
 </template>
@@ -26,6 +28,14 @@ export default {
             available: true,
 
         };
+    },
+    methods: {
+        changeMsg() {
+            return  this.msgf = "Hi mohamed anwar first changed";
+        },
+        changeNumber() {
+            return this.number = 456;
+        },
     },
     components: {
         Third,

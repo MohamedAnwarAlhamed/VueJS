@@ -1,6 +1,10 @@
 <template>
     <div class="first">
         <h1>{{ msgp }}</h1>
+        <h1>{{ number }}</h1>
+        <h1>{{ skills[2] }}</h1>
+        <h1>{{ person.name }}</h1>
+        <h1>{{ available }}</h1>
         <h1>{{ msgf }}</h1> 
         <Third />
     </div>
@@ -13,6 +17,14 @@ export default {
     data() {
         return {
             msgf: "Hi mohamed anwar first",
+            number: 123,
+            skills: ['html', 'css', 'js'],
+            person: {
+                name: 'mohamed',
+                age: 25,
+            },
+            available: true,
+
         };
     },
     components: {

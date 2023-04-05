@@ -49,28 +49,30 @@ export default {
       },
     };
   },
-  methods: {
-    changeMsg() {
-      return (this.msgf = "Hi mohamed anwar first changed");
-    },
-    changeNumber() {
-      // return this.number = 456;
-    },
-    getStyle() {
-      return "c1";
-    },
-    getName() {
-      console.log("Hi mohamed anwar");
-    },
-    inc() {
-      this.number++;
-    },
+  methods: {},
+  beforeCreate() {
+    console.log("beforeCreate");
   },
-  components: {
-    Third,
+  created() {
+    console.log("created");
   },
-  props: {
-    msgp: String,
+  beforeMount() {
+    console.log("beforeMount");
+  },
+  mounted() {
+    console.log("mounted");
+  },
+  beforeUpdate() {
+    console.log("beforeUpdate");
+  },
+  updated() {
+    console.log("updated");
+  },
+  beforeDestroy() {
+    console.log("beforeDestroy");
+  },
+  destroyed() {
+    console.log("destroyed");
   },
 };
 </script>

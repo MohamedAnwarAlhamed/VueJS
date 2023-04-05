@@ -1,18 +1,18 @@
 <template>
     <div v-bind:class="classNname">
-        <h1 :class="getStyle()">{{ msgp }}</h1>
         <h1>{{ number }}</h1>
-        <h1>{{ skills[2] }}</h1>
-        <h1>{{ person.name }}</h1>
-        <h1>{{ available }}</h1>
-        <h1>{{ msgf }}</h1> 
-        <h1>{{ changeMsg() }}</h1>
-        <h1>{{ changeNumber() }}</h1>
-        <a :href="link">Google</a>
-        <Third />
-        <button v-on:click="getName()">click</button>
-        <!-- <button v-on:click="number++">click2</button> -->
-        <button v-on:click="inc()">click2</button>
+        <input type="text" value="" v-model="number">
+        <button @click="inc()">+</button>
+
+        <input type="checkbox" checked="available" v-model="available">
+        <p>{{ available }}</p>
+
+        <select name="" id="" v-model="selected">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <span>{{ selected }}</span>
 
 
     </div>
@@ -34,6 +34,7 @@ export default {
             available: true,
             classNname: 'first',
             link: 'https://www.google.com',
+            selected: ' ',
 
         };
     },

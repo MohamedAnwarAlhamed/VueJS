@@ -1,75 +1,86 @@
 <template>
-    <div v-bind:class="classNname">
-        <h1>{{ number }}</h1>
-        <input type="text" value="" v-model="number">
-        <button @click="inc()">+</button>
+  <div v-bind:class="classNname">
+    <input type="text" v-model="character" />
+    <div v-if="character == 'A'">A</div>
+    <div v-else-if="character == 'B'">B</div>
+    <div v-else>C</div>
 
-        <input type="checkbox" checked="available" v-model="available">
-        <p>{{ available }}</p>
-
-        <select name="" id="" v-model="selected">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-        </select>
-        <span>{{ selected }}</span>
-
-
+    <div v-for="c in country" :key="c.code">
+      {{ c.name }}
     </div>
+
+    <div v-for="(value, key) in personInfo" :key="key">
+      {{ key }} : {{ value }}
+    </div>
+  </div>
 </template>
         
 <script>
-import Third from './Third.vue';
+import Third from "./Third.vue";
 export default {
-    name: 'First',
-    data() {
-        return {
-            msgf: "Hi mohamed anwar first",
-            number: 123,
-            skills: ['html', 'css', 'js'],
-            person: {
-                name: 'mohamed',
-                age: 25,
-            },
-            available: true,
-            classNname: 'first',
-            link: 'https://www.google.com',
-            selected: ' ',
+  name: "First",
+  data() {
+    return {
+      msgf: "Hi mohamed anwar first",
+      number: 123,
+      skills: ["html", "css", "js"],
+      person: {
+        name: "mohamed",
+        age: 25,
+      },
+      available: true,
+      classNname: "first",
+      link: "https://www.google.com",
+      selected: " ",
+      character: "B",
+      country: [
+        { name: "Egypt", code: "EG" },
+        { name: "USA", code: "US" },
+        { name: "UK", code: "UK" },
+        { name: "France", code: "FR" },
+        { name: "Germany", code: "DE" },
+        { name: "Italy", code: "IT" },
+      ],
 
-        };
+      personInfo: {
+        name: "mohamed",
+        age: 25,
+        skills: ["html", "css", "js"],
+      },
+    };
+  },
+  methods: {
+    changeMsg() {
+      return (this.msgf = "Hi mohamed anwar first changed");
     },
-    methods: {
-        changeMsg() {
-            return  this.msgf = "Hi mohamed anwar first changed";
-        },
-        changeNumber() {
-            // return this.number = 456;
-        },
-        getStyle(){
-            return 'c1';
-        },
-        getName(){
-            console.log("Hi mohamed anwar");
-        },
-        inc(){
-            this.number++;
-        },
+    changeNumber() {
+      // return this.number = 456;
     },
-    components: {
-        Third,
+    getStyle() {
+      return "c1";
     },
-    props: {
-        msgp: String,
+    getName() {
+      console.log("Hi mohamed anwar");
     },
+    inc() {
+      this.number++;
+    },
+  },
+  components: {
+    Third,
+  },
+  props: {
+    msgp: String,
+  },
 };
 </script>
         
 <style scoped>
 .first {
-    background-color: #f00;
+  background-color: #f00;
 }
 .c1 {
-    color: green;
+  color: green;
 }
 </style>
 

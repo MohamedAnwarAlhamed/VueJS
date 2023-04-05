@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <First msgp=" hi this is props from first"/>
+    <First />
     <Seconde />
   </div>
 </template>

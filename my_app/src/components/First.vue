@@ -10,6 +10,11 @@
         <h1>{{ changeNumber() }}</h1>
         <a :href="link">Google</a>
         <Third />
+        <button v-on:click="getName()">click</button>
+        <!-- <button v-on:click="number++">click2</button> -->
+        <button v-on:click="inc()">click2</button>
+
+
     </div>
 </template>
         
@@ -37,11 +42,17 @@ export default {
             return  this.msgf = "Hi mohamed anwar first changed";
         },
         changeNumber() {
-            return this.number = 456;
+            // return this.number = 456;
         },
         getStyle(){
             return 'c1';
-        }
+        },
+        getName(){
+            console.log("Hi mohamed anwar");
+        },
+        inc(){
+            this.number++;
+        },
     },
     components: {
         Third,

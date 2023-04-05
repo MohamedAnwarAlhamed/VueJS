@@ -1,6 +1,6 @@
 <template>
-    <div class="first">
-        <h1>{{ msgp }}</h1>
+    <div v-bind:class="classNname">
+        <h1 :class="getStyle()">{{ msgp }}</h1>
         <h1>{{ number }}</h1>
         <h1>{{ skills[2] }}</h1>
         <h1>{{ person.name }}</h1>
@@ -8,6 +8,7 @@
         <h1>{{ msgf }}</h1> 
         <h1>{{ changeMsg() }}</h1>
         <h1>{{ changeNumber() }}</h1>
+        <a :href="link">Google</a>
         <Third />
     </div>
 </template>
@@ -26,6 +27,8 @@ export default {
                 age: 25,
             },
             available: true,
+            classNname: 'first',
+            link: 'https://www.google.com',
 
         };
     },
@@ -36,6 +39,9 @@ export default {
         changeNumber() {
             return this.number = 456;
         },
+        getStyle(){
+            return 'c1';
+        }
     },
     components: {
         Third,
@@ -46,6 +52,13 @@ export default {
 };
 </script>
         
-<style scoped></style>
+<style scoped>
+.first {
+    background-color: #f00;
+}
+.c1 {
+    color: green;
+}
+</style>
 
 
